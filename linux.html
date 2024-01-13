@@ -50,7 +50,7 @@
         }
 
         p {
-            color: #ccc;
+            color: #F2F5F7;
             line-height: 1.6;
         }
 
@@ -95,7 +95,7 @@
             z-index: 2;
            }
            
-
+        
         #forums {
              width: 80%;
               margin: 0 auto;
@@ -104,8 +104,21 @@
          #forums h2 {
                   font-size: 24px;
                   margin-bottom: 10px;
-                     }
-   
+     
+                }
+         .Word_wrapper p {
+            font-size: 20px;
+                    overflow-wrap: break-word;
+                    max-width: 1000px; /* You can adjust this value based on your requirements */
+
+                }
+                .Word_wrapper  {
+                    font-size: 20px;
+                            overflow-wrap: break-word;
+                            max-width: 1000px; /* You can adjust this value based on your requirements */
+        
+                        }
+    
         #forums ul {
                list-style-type: none;
               padding: 0;
@@ -142,8 +155,169 @@
                     cursor: pointer;
                     font-weight: bold;
                    }
+        .boxed-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                  }
+                  
+        .box {
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    max-width: 1000px;
+                  }
+
+         a:link {
+                    color: red;
+                   }
+                   
+                   /* visited link */
+          a:visited {
+                    color: greenyellow;
+                   }
+                   
+                   /* mouse over link */
+         a:hover {
+                    color: blue;
+                   }
         
+                   .jump-to-section {
+                    line-height: 2.5;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    padding: 20px;
+                    display: none;
+                    transition: top 0.3s ease-in-out; /* Add smooth transition for better user experience */
+                }
+                
+                .jump-to-section ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+                
+                .jump-to-section a {
+                    text-decoration: none;
+                    color: yellowgreen;
+                }
+                
+                .jump-to-section a:hover {
+                    color: blue;
+                }
+                
+                /* Show jump to section only on larger screens */
+                @media only screen and (min-width: 968px) {
+                    .jump-to-section {
+                        display: block;
+                    }
+        
+                }
+                .section {
+                    height: 500px; /* Adjust the height based on your content */
+                    margin-bottom: 20px;
+                }
+
+                .cheat-sheet {
+                    position: fixed;
+                    top: 10;
+                    right: 0;
+                    width: 200px;
+                    margin-right: 350px;
+                    background-color: #222;
+                    padding: 45px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                    line-height: 5.5; /* Adjust this value to add more or less space between the lines */
+
+                }
+                   @media (max-width: 968px) {
+                    .cheat-sheet {
+                        display: none;
+                    }
+                }
+                .forum {
+                    position: fixed;
+                    top: 40;
+                    right: 0;
+                    width: 200px;
+                    margin-right: 250px;
+                    background-color: #222;
+                    padding: 25px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                    line-height: 4.5; /* Adjust this value to add more or less space between the lines */
+
+                }
+                   @media (max-width: 968px) {
+                    .forum {
+                        display: none;
+                    }
+                }
+                .cards-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    max-width: 800px;
+                    gap: 20px; /* Adjust the gap between cards */
+                }
+        
+                .card {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                    width: 40%;
+                    border-radius: 5px;
+                    margin: 10px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: box-shadow 0.3s ease-in-out;
+                }
+        
+                .card:hover {
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                }
+        
+                img {
+                    border-radius: 10px 10px 0 0;
+                    width: 100%;
+                    height: auto;
+                }
+        
+                .container {
+                    padding: 2px 16px;
+                }
+        
+                h4 {
+                    position: absolute;
+                    top: 0px;
+                    right: 10px;
+                    color: white;
+                    text-shadow: 2px 2px 4px #000000;
+                }
+        
+                .read-more-content {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease-out;
+                }
+        
+                .card.expanded .read-more-content {
+                    max-height: 1000px;
+                }
+        
+                @media (max-width: 768px) {
+                    .card {
+                        width: 80%;
+                    }
+                }
+        
+                @media (max-width: 480px) {
+                    .card {
+                        width: 100%; /* Adjust width for smaller screens */
+                    }
+                }
     </style>
+    
 
 </head>
 <body>
@@ -162,69 +336,264 @@
     <main>
         <div class="sidebar">
         <section>
-            <h2>Unix Philosophy</h2>
-            <p>The Unix philosophy is a set of design principles that underlie the development of the Unix operating system and its descendants, including Linux. These principles emphasize simplicity, modularity, and the use of small, focused tools that can be combined to perform complex tasks. The Unix philosophy is often summarized by the following key principles:
+            <h2 id="section1">Unix Philosophy</h2>
+            <div class="Word_wrapper">
+
+            <p>
+
+                Unix is a proprietary operating system developed by Bell Labs’ Ken Thompson and Dennisitchie in 1969. The Unix Philosophy is a set of principles that a from the experience of Unix developers, which help in building minimal, modular, and easy-to-use software. This philosophy has been embraced by later operating systems such as GNU/Linux and FreeBSD.
 <br>
-                1.Small is Beautiful:
-                <br>               The Unix mindset that "small is beautiful" encourages the creation of compact, straightforward, and task-specific programs that perform well. It places a strong emphasis on software design's modularity, efficiency, and clarity.
-                <br>                 2.Write Programs to Work Together:
-                <br>               Design programs to accept input from other programs and produce output that can be used by others, promoting interoperability through standard input and output streams.   
-                <br> 3.Choose Portability Over Efficiency:
-                <br>     Prioritize code portability—making it work on different systems—rather than optimizing for a specific one.
-                <br>     4.Use Text Streams:
-                <br>    Use plain text for data interchange between programs.
-                <br>     This allows for human-readable output and simplifies the connection between different tools.
-                <br>       5.The Rule of Silence:
-                <br>      Minimize unnecessary program output and avoid verbosity when there's nothing important or surprising to convey. Keep programs quiet when they have nothing significant to say.
-                <br>       6.Build on Existing Foundations:
-                <br>     in the context of the Unix/Linux philosophy means leveraging existing tools and libraries rather than starting from scratch. It encourages the reuse of established, reliable components to create new functionality, fostering efficiency and avoiding unnecessary duplication of effort.
-                <br>    7.Separation of Concerns:
-                <br>   Divide complex tasks into smaller, manageable parts, with each part addressing a specific aspect or concern independently.     
-                <br>     8.Document Everything:
-                <br>    Provide comprehensive and clear documentation for programs and systems to ensure understanding and effective use.
-                <br>    9.Community and Open Source:
-                <br>     Community: Collaboration of individuals sharing common interests or goals.
-                <br>     Open Source: Software with freely available source code for users to view, modify, and distribute.
-                <br>   Impact: Fosters collective development, transparency, and innovation through shared contributions.</p>
-        </section>
+                The Unix Philosophy consists of tenets that aim to make software development, debugging, and maintenance as easy as possible. These tenets, while not universally agreed upon, are still widely regarded as core to this philosophy.
+                <br>
+                <br> <br><b>Modularity and Composition:</b> Modularity is the art of dividing a huge software into small parts, which are connected through clean interfaces. This approach allows for easier management and debugging of software. It also offers more choice to the end-user. For example, a Linux-based operating system is like a LEGO set, where every part of the system is a separate replaceable entity not tied to the operating system itself.
+                <br><br> <b> Composition and Extensibility:</b> Programs should be written to work together, with the output of one program serving as the input to another. This approach allows for the creation of complex software from simple building blocks. This rule is followed by classic Unix era software, such as Vim, Emacs, and Bash, which are thriving because of their extensibility.
+                <br><br><b> Do One Thing and Do It Well:</b> Each small component of a modular program should have a single task and perform it as efficiently, elegantly, and robustly as possible. These small programs are easy to handle, maintain, and debug.
+                <br><br><b>Clarity and Simplicity:</b> Programs should be simple and clear to users. They should communicate what is happening in the background and give clear, verbose error messages when they fail. The user interface should not be surprising. The algorithms implemented in the program should also be as simple as possible.
+                <br><br><b>Portability over Efficiency:</b> While efficient software is desirable, slightly slower but more portable code is generally more practical. Software should be made as memory efficient as possible, but beware of micro-optimizations to the speed of the program as the most efficient way is specific to hardware and hence not portable.
+                <br>In summary, the Unix Philosophy emphasizes modularity, simplicity, clarity, and portability in software development. By following these principles, developers can build minimal, modular, and easy-to-use software that can be extended and adapted to various use cases.
+                
+                
+                
+                
+            </p>
+            
 
-        <h2>What is Linux?</h2>
-        <p>Linux is a free and open-source operating system based on the Linux kernel. It is the most popular server operating system and powers many other Unix-like operating systems.</p>
+            </div>
 
-        <h2>Linux Applications</h2>
-        <p>Every version of Linux operating system manages hardware resources, launches and handles applications and provides form of user interface. The huge amount of community for developers Apache, as well as for network operations, scientific computing tasks that require huge compute clusters, running database, desktop and endpoint computing and running mobile devices with OS version like Android. 
+
+
+
+
+ </section>
+
+
+         <div class="cheat-sheet">
+            <h2>Cheat_Sheet/Text </h2>
+            <ul>
+                <li><a href="cheet-sheet/advanced-linux-commands-cheat-sheet-red-hat-developer.pdf" target="_blank">advanced-linux</a></li>
+                <li><a href="cheet-sheet/Bash-commands-cheat-sheet-Red-Hat-Developer.pdf"target="_blank">Bash-Commands</a></li>
+                <li><a href="cheet-sheet/cheat_sheet_selinux_v2.pdf"target="_blank">se-linux</a></li>
+                <li><a href="cheet-sheet/cl-oreilly-kubernetes-operators-ebook-f21452-202001-en_2.pdf"target="_blank">kubernetes</a></li>
+                <li><a href="cheet-sheet/Getting-GitOps-eBook-red-hat-developer.pdf"target="_blank">Getting-GitOps</a></li>
+                <li><a href="cheet-sheet/Linux-commands-cheat-sheet-2023-Red-Hat-Developer (1).pdf"target="_blank">Linux-commands</a></li>
+                <li><a href="cheet-sheet/osdc_cheatsheet-networking-2021.4.8.pdf"target="_blank">Networking</a></li>
+                <li><a href="cheet-sheet/Path-to-GitOps-Red-Hat-Developer-e-book.pdf"target="_blank">Path-to-GitOps</a></li>
+                <li><a href="cheet-sheet/quarkus-fascicle-practising-v1.pdf"target="_blank">quarkus-practising-v1</a></li>
+
+            </ul>
+        </div>
+ <div class="jump-to-section">
+    <h2>Jump to :</h2>
+    <ul>
+       <li><a href="#section1">Unix Philosophy
+    </a></li>
+    <li><a href="#section2">What is Linux?
+    </a></li>
+    <li><a href="#section3">Linux Applications
+    </a></li>
+    <li><a href="#section4">What is open source software?
+
+    </a></li>
+    <li><a href="#section5">Linux Flavors
+    </a></li>
+    <li><a href="#section6">Why Servers Use Linux
+    </a></li>
+    <li><a href="#section7">Becoming a Linux Engineer
+    </a></li>
+    <li><a href="#section8">Installing Linux
+    </a></li>
+    <li><a href="#section9">The Terminal
+    </a></li>
+    <li><a href="#section10"> Packages and Privileges
+    </a></li>
+    <li><a href="#section11">Courses and terminal emulator 
+    </a></li>
+
+    </ul>
+   </div>
+   
+
+        <h2 id="section2" >What is Linux?</h2>
+        <div class="Word_wrapper">
+
+        <p > Linux® is an open source operating system (OS). An operating system is the software that directly manages a system’s hardware and resources, like CPU, memory, and storage. The OS sits between applications and hardware and makes the connections between all of your software and the physical resources that do the work. Linux Definition Linux is a kernel that has an ecosystem of open-source operating systems. The system is based on the UNIX operating system and has numerous distributions built around the same kernel.
+            <br>
+            <em>Note: Linux often refers both to the kernel and operating system. </em>The Linux kernel is the core of every Linux distribution.
+            <br>
+            Linux is known for being reliable, stable, secure, and flexible. Its features make it a popular choice for running supercomputers, servers, and desktop machines. It is also often used as an embedded application (software) in embedded systems. Linux is the core of many everyday devices, such as phones, smart TVs, and wearables.
+            
+            
+          <br>  While Linux is often associated with the Unix operating system, it is the not same; Linux is a distinct and independent solution inspired by Unix, sharing some similarities but also having unique features            
+            Linux is a Unix-like operating system, specifically a kernel inspired by a version of a Unix kernel. Unix is an operating system with many different kernel versions. Although the two technologies share some similarities, each solution has unique features. Linux is a clone of Unix, but it is not Unix. The kernel borrows many ideas from Unix, such as the interface for programming APIs using the POSIX standard. Still, the code is not a direct derivative of the Unix source code.
+            <br>
+
+            
+            Linus Torvalds developed Linux in 1991 as a student at the University of Helsinki. The original Linux kernel was made for computers that use Intel microprocessors 80386.
+            <br>
+
+            During that time, Linus used Minix, a cheap Unix made as a learning platform. Due to the licensing restrictions which limited changes in the source code, Linus decided to create an operating system kernel. The project started as a simple terminal emulator used to connect to larger Unix systems at the university, which was further developed and improved.
+            <br>
+
+            In 1991 the first Linux version appeared on the Internet. The project becomes collaborative, and many programmers participate in its development. The system works on many different processor versions as a result. New companies appear that specialize in Linux, such as Red Hat, while giants such as Intel provide Linux solutions for embedded systems, desktop machines, and servers.
+            <br>
+
+            One of the most exciting characteristics of Linux is that it is not a commercial product. The creator maintains the kernel while a connected group of developers continues development. The project is a result of collaboration through the Internet.
+            <br>
+
+            paraphrace above paragaph in a meaningfull ay which could be posted on a website , the paraphracing should be effective so that the contend shouldnt be detected for any plagarism
+            
+            <br>
+            Linux is a renowned open-source operating system, frequently recognized for its reliability stability, security, and adaptability. It is built around the Linux kernel, which is open-source, Unix-like operating kernel. While Linux is often associated with the Unix operating system, it is the same; Linux is a distinct and independent solution inspired by Unix, sharing some similarities but also having unique features.
+            <br>
+
+            Linux was initially developed in 1991 by Linus Torvalds, a student at the University of Helsinki, as a response to the limitations of the Unix-based Minix operating system. The first Linux version was released on the Internet, and since then, it has evolved into a collaborative project involving numerous developers worldwide. This global collaboration has allowed Linux to support various processor versions and become the foundation for many companies, such as Red Hat, and the preferred choice for giants like Intel in embedded systems, desktop machines, and servers.
+            
+            <br>
+ 
+        </div>
+        <h2 id="section3">Linux Applications</h2>
+        <div class="Word_wrapper">
+
+        <p class="Word_wrapper">Every version of Linux operating system manages hardware resources, launches and handles applications and provides form of user interface. The huge amount of community for developers Apache, as well as for network operations, scientific computing tasks that require huge compute clusters, running database, desktop and endpoint computing and running mobile devices with OS version like Android. 
             Linux is used in the following ways:
-           <br> Server OS for web servers, database servers, file servers, email servers and any other type of shared server. Designed to support high-volume and multithreading applications, Linux is well-suited for all types of server applications.
-           <br> Desktop OS for personal productivity computing. Linux is an open source and freely available desktop environment for users who prefer it to commercial OSes.
-           <br> Headless server OS for systems that do not require a graphical user interface (GUI) or directly connected terminal and keyboard. Headless systems are often used for remotely managed networking server and other devices.
-           <br> Embedded device or appliance OS for systems that require limited computing function. Linux is used as an embedded OS for a variety of applications, including household appliances, automotive entertainment systems and network file system appliances.
-           <br>Network OS for routers, switches, domain name system servers, home networking devices and more. For example, Cisco offers a version of the Cisco Internetwork Operating System (IOS) that uses the Linux kernel.
-           <br>Software development OS for enterprise software development. Although many development tools have been ported to Windows or other OSes, Linux is home to some of the most widely used open source software development tools. For example, git for distributed source control; vim and emacs for source code editing; and compilers and interpreters for almost every programming language.
-           <br> Cloud OS for cloud instances. Major cloud computing providers offer access to cloud computing instances running Linux for cloud servers, desktops and other services.
-           <br> Linux is highly configurable and depends on a modular design that enables users to customize their own versions of Linux. Depending on the application, Linux can be optimized for different purposes such as:
-           <br>networking performance;
-           <br>computation performance;
-           <br>deployment on specific hardware platforms; and
-           <br>deployment on systems with limited memory, storage or computing resources.
+           <br> <b>Server OS </b>for web servers, database servers, file servers, email servers and any other type of shared server. Designed to support high-volume and multithreading applications, Linux is well-suited for all types of server applications.
+           <br><br><b> Desktop OS </b>for personal productivity computing. Linux is an open source and freely available desktop environment for users who prefer it to commercial OSes.
+           <br><br> <b>Headless server OS </b>for systems that do not require a graphical user interface (GUI) or directly connected terminal and keyboard. Headless systems are often used for remotely managed networking server and other devices.
+           <br><br> <b>Embedded device or appliance OS </b>for systems that require limited computing function. Linux is used as an embedded OS for a variety of applications, including household appliances, automotive entertainment systems and network file system appliances.
+           <br><br> <b>Network OS for routers, switches, domain name system s</b>ervers, home networking devices and more. For example, Cisco offers a version of the Cisco Internetwork Operating System (IOS) that uses the Linux kernel.
+           <br><br> <b>Software development OS </b>for enterprise software development. Although many development tools have been ported to Windows or other OSes, Linux is home to some of the most widely used open source software development tools. For example, git for distributed source control; vim and emacs for source code editing; and compilers and interpreters for almost every programming language.
+           <br><br>  <b>Cloud OS for cloud instances</b>
+             Major cloud computing providers offer access to cloud computing instances running Linux for cloud servers, desktops and other services.
+           <br> Linux is highly configurable and depends on a modular design that enables users to customize their own versions of Linux. 
+           Depending on the application, Linux can be optimized for different purposes such as:
+           <br><i><u>networking performance;</i></u>
+           <br><i><u>computation performance;</i></u>
+           <br><i><u>deployment on specific hardware platforms;</i></u> and
+           <br><i><u>deployment on systems with limited memory, storage or computing resources.</i> </u>
+           <br>
            <br>Users can choose different Linux distributions for specific applications or adapt a specific distribution to incorporate custom kernel configurations.</p>
+           </div>
         <section>
-            <h2>Evolution of Linux</h2>
-            <p>Linux was introduced on August 25, 1991 by Linus Torvalds a Finnish computer science student. At the beginning, when he announced the creation of the Linux kernel in a Usenet newsgroup post aimed to develop a free and open-source operating system kernel inspired by Unix. But his initial release was not a complete operating system, it provided the foundation for the development of the Linux operating system. Later on, contributions from developers worldwide led to the creation of additional components and complete Linux distributions. The open-source community’s ongoing efforts have made Linux a mature and widely used operating system in various computing environments today.</p>
+            <h2 id="section4">What is open source software?
+            </h2>
+            <div class="Word_wrapper">
+<p>  Open source software is distributed under a particular type of license that allows users access to its source code.Linux is released under the GNU General Public License (GPL).
+   Although there are various open source licenses, software is generally considered open source if:
+
+   <br> <strong>The source code is at no extra cost, enabling users to examine and modify it.
+   <br> The source code can be utilized to create other software.
+   <br>Open source software does not always imply that the software is given away for free. However, it does mean that the source code is available for free.</strong>
+    
+   <br> For instance, Red Hat® Enterprise Linux® source code is accessible to everyone, but converting it into usable code requires expertise, time, and resources. Organizations that want the production-ready code without constructing it themselves from source code can purchase a subscription.
+   <br> 
+   <br> Open source software is sometimes mistaken for the free software movement, which can create confusion about whether open source means "free." The free software movement emerged from the 1970s hacker culture and was established by Richard Stallman as part of the GNU Project and the Free Software Foundation. "Free software" typically emphasizes end-users' rights, but it can also be confused with "free of cost."
+    
+   <br> Neither free software nor open source software implies anything about cost, as both kinds of software can be legally sold or given away.
+    
+   <br>Free software and open source software share similar values, and the terms are sometimes combined in the phrase "free and open source software" (FOSS).
+    
+   <br>Key principles of open source software development Open source software development is based on three main principles: transparency, collaboration, and decentralization.
+    
+   <br>Collaboration Unlike closed source software, OSS is not only available to users but also to build upon. This has led to a global network of contributors who work together on a project by reviewing, testing, documenting, and improving the code.
+    
+   <br>Transparency and security Open source software development is public, making the codebase and communication among users accessible to the open source community. This transparency builds trust among contributors, encourages innovation, and allows users to quickly identify and fix security vulnerabilities.
+    
+   <br>Since the community develops the code, and no one person or company owns it, open source is a decentralized form of software development. This results in fewer barriers to entry, silos, and bottlenecks.</p>
+            </div>
         </section>
     
         <section>
-            <h2>Linux Flavors</h2>
-            <p>Linux comes in various flavors, also known as distributions. These distributions provide a user-friendly environment, including a graphical user interface (GUI), and often include pre-installed software. Some popular Linux distributions include:</p>
-            <ul>
-                <li>Ubuntu</li>
-                <li>Fedora</li>
-                <li>Debian</li>
-                <li>Arch Linux</li>
-                <li>openSUSE</li>
+            <h2 id="section5">Linux Flavors</h2>
+            <div class="Word_wrapper">
+
+            <p >Linux comes in various versions tailored to meet the needs of different users, ranging from beginners to advanced enthusiasts. Referred to as distributions or distros, these versions can be freely downloaded, burned onto disks or USB drives, and installed on multiple machines.
+
+                Some popular Linux distributions include:
+                <ul>
+               <li>Linux Mint</li> 
+                <li>Manjaro</li> 
+                <li>  Debian</li> 
+                <li> Ubuntu</li> 
+                <li> Antergos</li> 
+                <li> Solus</li> 
+                <li> Fedora</li> 
+                <li> Elementary OS</li> 
+                <li> openSUSE</li> 
             </ul>
+                Each distribution presents a unique approach to desktop environments, with some adopting modern user interfaces like GNOME and Elementary OS's Pantheon, while others adhere to more traditional desktop environments, such as openSUSE's use of KDE.
+                
+                For server-related tasks, Linux offers options like:
+                <br>
+                <br>
+
+  
+                <div class="cards-container">
+                    <div id="myCard" class="card" onclick="toggleReadMore('myCard')">
+                        <img src="img/Redhat-Logo.png">
+            
+                        <div class="container">
+                            <p id="content1">Red Hat Enterprise Linux provides more than an operating system—it also connects you to Red Hat’s extensive hardware, software, and cloud partner ecosystem, and comes with 24x7 support. Red Hat Enterprise Linux 9.3 is our latest release, but with access to all supported versions and a 10 year life cycle, you can upgrade on your schedule and adopt new features when needed.</p>
+                            <div class="read-more-content">
+                                <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" target="_blank">Features and benefits</a>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div id="myCard1" class="card" onclick="toggleReadMore('myCard1')">
+                        <img src="img/ubuntu-logo.jpg">
+            
+                        <div class="container">
+                            <p id="content2">Stay up-to-date with regular updates and upgrades Long-term support (LTS) releases of Ubuntu Server receive standard security updates for around 2,500 packages in the Ubuntu Main repository for five years by default. Every six months, interim releases bring new features, while hardware enablement updates add support for the latest machines to all supported LTS releases.</p>
+                            <div class="read-more-content">
+                                <p>All Ubuntu Advantage for Infrastructure subscriptions include Expanded Security Maintenance (ESM) increasing the support life-cycle to up to 10 years.</p>
+                                <a href="https://ubuntu.com/server" target="_blank">Features and benefits</a>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div id="myCard2" class="card" onclick="toggleReadMore('myCard2')">
+                        <img src="img/suselinux.png">
+            
+                        <div class="container">
+                            <p id="content3">SUSE Linux Enterprise Server SUSE Manager's configuration, auditing, and automation features make it easy to ensure compliance with internal security policies and external regulations.Includes APIs and services to create applications that can work with a wide range of architectures, servers, storage, and networks.</p>
+                            <div class="read-more-content">
+                                <p>SUSE Linux Enterprise High Availability Extension, geoclustering, SUSE Linux Enterprise Live Patching are down. </p>
+                                <a href="https://www.suse.com/ja-jp/products/server/" target="_blank">Features and benefits</a>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div id="myCard3" class="card" onclick="toggleReadMore('myCard3')">
+                        <img src="img/centos.png">
+            
+                        <div class="container">
+                            <p id="content4">The CentOS Linux distribution is a stable, predictable, manageable and reproducible platform derived from the sources of Red Hat Enterprise Linux (RHEL). We are now looking to expand on that by creating the resources needed by other communities to come together and be able to build on the CentOS Linux platform.</p>
+                            <div class="read-more-content">
+                                <p> And today we start the process by delivering a clear governance model, increased transparency and access. In the coming weeks we aim to publish our own roadmap that includes variants of the core CentOS Linux. </p>
+                                <a href="https://www.centos.org/about/" target="_blank">Features and benefits</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+<p>
+                Certain server distributions, like Ubuntu Server and CentOS, are free, while others, such as Red Hat Enterprise Linux and SUSE Enterprise Linux, come with associated costs that include support.
+                
+                Choosing the right distribution depends on your:
+                
+                <strong>Skill level in computer usage.
+            <br>    Preference for a modern or standard desktop interface.
+            <br>         Intention to use it for a server or desktop.
+            <br>         Newcomers or those with basic computer skills may find Linux Mint, Ubuntu, Elementary OS, or Deepin suitable. Users with above-average skills might opt for Debian or Fedora. Advanced users who have mastered computer and system administration might choose Gentoo, or even embark on building a custom Linux distribution with the assistance of Linux From Scratch.
+            </strong>
+                For server-only needs, consider whether you require a desktop interface or if command-line usage suffices. Ubuntu Server, for instance, doesn't install a GUI interface by default, providing a lightweight option with a focus on the command line. System administrators may also weigh features when selecting a server-specific distribution, with CentOS offering an all-in-one solution out of the box, while Debian or Ubuntu Linux allow users to add components as needed.</p>
+            </p>
+            </div>
         </section>
         <section>
-            <h2>Why Servers Use Linux</h2>
+            <h2 id="section6">Why Servers Use Linux</h2>
+            <div class="Word_wrapper">
+
             <p>Linux is a powerful, efficient, and reliable operating system, which makes it a popular choice for server environments. Here are some reasons why servers use Linux:</p>
             <ul>
                 <li>Open-source: Linux is an open-source operating system, meaning its source code is freely available for anyone to use, modify, and distribute. This makes it a cost-effective choice for businesses and organizations.</li>
@@ -233,9 +602,12 @@
                 <li>Stability: Linux has a strong track record of reliability, which is crucial for server environments where uptime is essential. Its efficient resource management and lack of malware compared to other operating systems also contribute to its stability.</li>
                 <li>Support: Linux has a large, active community that provides extensive support and documentation. This makes it easier for administrators to find solutions to potential problems.</li>
             </ul>
+            </div>
         </section>
         <section>
-            <h2>Becoming a Linux Engineer</h2>
+            <h2 id="section7">Becoming a Linux Engineer</h2>
+            <div class="Word_wrapper">
+
             <p>To become a Linux engineer, follow these steps:</p>
             <ol>
                 <li>Learn the basics of Linux, including the command line interface and essential commands.</li>
@@ -246,9 +618,28 @@
                 <li>Gain experience in system administration and troubleshooting by working on real-life Linux systems.</li>
                 <li>Consider pursuing relevant certifications, such as the LPIC or Linux+, to demonstrate your Linux engineering expertise.</li>
             </ol>
+            </div>
         </section>
+        <section id="forums">
+            <div class="forum">
+
+             <h2>Linux Forums</h2>
+            <ul>
+               <li><a href="https://distrowatch.com/">Distrowatch</a></li> 
+                <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li> 
+                <li><a href="https://forums.debian.net/">Debian Forums</a></li>
+                 <li><a href="https://www.linux.org/forums/">Linux.org Forums</a></li>
+                  <li><a href="https://ubuntuforums.org/">Ubuntu Forums</a></li> 
+                  <li><a href="https://forums.linuxmint.com/">Linux Mint Forums</a></li>
+                   <li><a href="https://unix.stackexchange.com/">Unix & Linux Stack Exchange</a></li> 
+               </ul> 
+               </div>   
+           </section>
+
         <section>
-            <h2>Installing Linux</h2>
+            <h2 id="section8">Installing Linux</h2>
+            <div class="Word_wrapper">
+
             <p>Installing Linux on your machine is a straightforward process. Here are some steps to help you:</p>
             <ol>
                 <li>Backup your important data before proceeding, as the installation process may delete some files.</li>
@@ -258,25 +649,70 @@
                 <li>Insert the bootable USB drive into your machine and restart it. Boot from the USB drive and follow the on-screen instructions to complete the installation.</li>
             </ol>
             <p>You can also find tutorials on installing Linux on YouTube. Here are some suggested videos:</p>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=Dx2dJUPsJso" target="_blank">Clear Linux OS Installation</a></li>
-                <li><a href="https://www.youtube.com/watch?v=Pn7jZ5i1RTM" target="_blank">Dual Boot Windows and Linux</a></li>
-                <li><a href="https://www.youtube.com/watch?v=f_8cD4HFvhc" target="_blank">Ubuntu Linux Installation</a></li>
-                <li><a href="https://www.youtube.com/watch?v=zOZEkzwhThc" target="_blank">Debian Linux Installation</a></li>
-                <li><a href="https://www.youtube.com/watch?v=DPLnBPM4DhI" target="_blank">Arch Linux Installation</a></li>
+            <ul class="boxed-list">
+                <li class="box"><a href="https://www.youtube.com/watch?v=Dx2dJUPsJso" target="_blank">Clear Linux OS Installation</a></li>
+                <li class="box"><a href="https://www.youtube.com/watch?v=Pn7jZ5i1RTM" target="_blank">Dual Boot Windows and Linux</a></li>
+                <li class="box"><a href="https://www.youtube.com/watch?v=f_8cD4HFvhc" target="_blank">Ubuntu Linux Installation</a></li>
+                <li class="box"><a href="https://www.youtube.com/watch?v=zOZEkzwhThc" target="_blank">Debian Linux Installation</a></li>
+                <li class="box"><a href="https://www.youtube.com/watch?v=DPLnBPM4DhI" target="_blank">Arch Linux Installation</a></li>
             </ul>
+            </div>
         </section>
         <section>
-            <h2>The Terminal</h2>
-            <p>The terminal, or command line interface, is a text-based application for interacting with the operating system. In Linux, the terminal provides users with the ability to execute commands and scripts, manage system processes, and troubleshoot issues. Some popular terminal emulators for Linux include GNOME Terminal, Konsole, and Xfce Terminal.</p>
+            <h2 id="section9">The Terminal</h2>
+            <div class="Word_wrapper">
+
+            <p>A terminal emulator is a software program that facilitates the use of a terminal in a graphical environment. Given that most users interact with Linux servers through an operating system with a graphical user interface (GUI), a terminal emulator becomes essential for server users. Various free and commonly-used terminal emulators are available across different operating systems, such as Terminal and iTerm 2 for Mac OS X, ConEmu, Windows Terminal, and PuTTY for Windows, and Gnome Terminal, Konsole, and XTerm for Linux. These emulators typically support features like tabbed windows and text highlighting.
+<br>
+<br>   **The Shell:**
+<br>    In Linux, the shell is a command-line interface responsible for interpreting user commands and script files, conveying instructions to the server's operating system. Notable shells include the Bourne-Again shell (bash) and Z shell (zsh). The bash shell, being the default for many Linux distributions, is the focus of this tutorial.
+<br>         
+<br>          **The Command Prompt:**
+<br>            Upon logging into a server, users are greeted by the Message of the Day (MOTD), followed by the command prompt or shell prompt. The command prompt provides information such as the username, hostname, current directory (indicated by ~), and the prompt symbol. For example, "sammy@webapp:~$". The root user, represented by #, holds superuser privileges for system-wide administrative tasks.
+<br>            
+<br>            **Running Commands:**
+<br>            Commands are executed by typing the name of an executable file at the command prompt. Each running command is a process, and commands can be issued with or without arguments and options. Linux is case-sensitive, so precise spelling and case adherence are crucial. Common commands allow users to navigate the file system, install software packages, and configure the system.
+<br>            
+<br>            **Environment Variables:**
+<br>            Environment variables are named values that influence command and process execution. They are configured during login and can be viewed using the `env` command. The `PATH` environment variable, a colon-delimited list of directories, directs the shell where to find executable programs. Values of environment variables can be retrieved using the echo command (e.g., `echo $PATH`). Users can set environment variables using the syntax `VAR=value`, and the `export` command allows exporting variables to be inherited by child processes. Existing variables can be referenced when setting new ones.
+<br>            
+<br>            It's important to note that changes to environment variables made during a session are only valid for that session. Permanent changes will be covered in a subsequent tutorial.</p>
+            </div>
         </section>
-        <section>
-            <h2>Updates and Privileges</h2>
-            <p>The stability of updates in Linux is crucial for maintaining a secure and efficient system. Linux distributions typically follow a "rolling release" model, which means they provide continuous updates and bug fixes. This approach allows users to benefit from the latest features and improvements without the need for a complete system reinstallation.</p>
-            <p>In Linux, the root user has unrestricted access to the system and is considered the "superuser." This user is responsible for managing system processes, software installation, and overall system security. To protect the system from unauthorized access and potential damage, Linux introduces the concept of "sudo" privileges. This allows authorized users to execute specific commands with root-level permissions when necessary.</p>
+        <section>Packages and Privileges
+            <h2 id="section10">Packages and Privileges</h2>
+            <div class="Word_wrapper">
+
+<p>Packages serve as a standardized method for distributing software on Linux distributions, constituting compressed archives containing all necessary data for installation. To facilitate software installation, removal, and updates, Linux-based operating systems employ package management systems. These systems, such as APT (Advanced Package Tool) for Debian-based distributions like Ubuntu, utilize package repositories and resolve dependencies during tasks like installing, updating, or removing software. Red Hat Package Manager (RPM), employed in Red Hat-based distributions such as Fedora and CentOS, manages packages in the .rpm format and addresses most dependencies automatically. Additionally, Arch Linux and similar distributions utilize the Pacman package manager, operating with .pkg.tar.xz file formats and providing terminal-based package management. Some Linux distributions also feature user-friendly GUI solutions for higher-level package management.</p>          
+  <p>In Linux, the root user has unrestricted access to the system and is considered the "superuser." This user is responsible for managing system processes, software installation, and overall system security. To protect the system from unauthorized access and potential damage, Linux introduces the concept of "sudo" privileges. This allows authorized users to execute specific commands with root-level permissions when necessary.Linux operates as a multi-user operating system built on Unix principles of file ownership and permissions to ensure security at the file system level. A fundamental understanding of ownership and permissions is crucial for effectively managing a cloud server. This tutorial provides an introduction to Linux ownership and permissions, focusing on viewing and comprehending them.
+    <br>
+    <br>**About Users:**
+    <br>Linux encompasses two user types: system users and regular users. System users run non-interactive or background processes, while regular users are utilized for interactive processes. The system also includes a superuser (root user) with the authority to override file ownership and permission restrictions.
+    <br> 
+    <br> **About Groups:**
+    <br> Groups consist of zero or more users, where each user belongs to a default group and can be part of additional groups. The /etc/group file contains information about groups and their members.
+    <br> 
+    <br> **Viewing Ownership and Permissions:**
+    <br>  Every file in Linux is owned by a single user and a single group, with specific access permissions. The "ls -l" command displays the permissions of a file, showing the file type, owner, group, and permissions. Permissions are categorized into user, group, and other classes, each represented by three triads: read, write, and execute.
+    <br>  
+    <br>   **Understanding Permissions:**
+    <br>   - **Read:** Allows viewing file contents or directory names.
+    <br>  - **Write:** Permits modification and deletion of files or directories.
+    <br>  - **Execute:** Enables running executable files or accessing directory contents.
+    <br>
+    <br> **Examples of Modes (and Permissions):**
+    <br> - **-rw-------:** File accessible only by its owner.
+    <br> - **-rwxr-xr-x:** Executable file for every user (world-executable).
+    <br> - **-rw-rw-rw-:** File open to modification by all users (world-writable).
+    <br> - **drwxr-xr-x:** Directory readable and accessible by every user.
+    <br> - **drwxrwx---:** Modifiable directory (including contents) by owner and group.
+    <br> - **drwxr-x---:** Accessible directory by its group.
+    <br> 
+    <br>  It is essential to note that owner permissions typically surpass those of group and other classes, and certain permission combinations are more logical in specific situations. Understanding these concepts is crucial for effective Linux server administration.</p>
+             </div>
         </section>
         <section id="courses">
-            <h2>Courses</h2>
+            <h2 id="section11">Courses</h2>
             <details>
               <summary>Linux Crash Course</summary>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/sWbUDq4S6Y8?si=MA8mKrEwMIAGaPLT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -293,19 +729,49 @@
         </section>
         </div>
     
+        <script>
+            function toggleReadMore(cardId) {
+                var card = document.getElementById(cardId);
+                card.classList.toggle('expanded');
+    
+                var contentId = "content" + cardId.charAt(cardId.length-1);
+                var content = document.getElementById(contentId);
+                content.classList.toggle('expanded');
+            }
+            
+                document.addEventListener("DOMContentLoaded", function () {
+                    var jumpToSection = document.querySelector('.jump-to-section');
+            
+                    window.addEventListener('scroll', function () {
+                        if (window.scrollY > 100) { // Adjust the scroll position as needed
+                            jumpToSection.style.top = window.scrollY + 'px';
+                        } else {
+                            jumpToSection.style.top = '0';
+                        }
+                    });
+                });
+            
+
+        </script>
     </main>
 
     <footer>
-        <section id="forums"> <h2>Linux Forums</h2>
+        <section id="Resources"> <h2>More resources
+        </h2>
              <ul>
-                <li><a href="https://distrowatch.com/">Distrowatch</a></li> 
-                 <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li> 
-                 <li><a href="https://forums.debian.net/">Debian Forums</a></li>
-                  <li><a href="https://www.linux.org/forums/">Linux.org Forums</a></li>
-                   <li><a href="https://ubuntuforums.org/">Ubuntu Forums</a></li> 
-                   <li><a href="https://forums.linuxmint.com/">Linux Mint Forums</a></li>
-                    <li><a href="https://unix.stackexchange.com/">Unix & Linux Stack Exchange</a></li> 
-                </ul> 
+                <li><a href="https://www.linuxfordevices.com/tutorials/linux/unix-philosophy" target="_blank">unix-philosophy</a></li>
+                <li><a href="https://www.redhat.com/en/topics/linux/what-is-linux#why-choose-red-hat " target="_blank">why-choose-red-hat</a></li>
+                <li><a href=" https://phoenixnap.com/kb/what-is-linux"   target="_blank"> What is Linux?</a> 
+                </li>
+                <li><a href="https://opensource.com/resources/linux"  target="_blank"> linux </a></li>
+                <li><a href=" https://www.redhat.com/en/topics/linux"target="_blank"> Redhat</a></li>
+                <li> <a href=" https://www.redhat.com/en/topics/open-source/what-is-open-source-software" target="_blank">what-is-open-source-software</a></li>
+                <li>  <a href=" https://resources.github.com/open-source/what-is-open-source-software" target="_blank"> OSS</a> </li>
+                <li>   <a href="https://www.suse.com/ja-jp/products/server/"  target="_blank"> SUSE</a></li>
+                <li>   <a href="https://ubuntu.com/server" target="_blank">  Ubuntu server</li>
+                <li>    <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux"  target="_blank">Enertprise linux</a></li>
+            <li> <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-permissions" target="_blank">an-introduction-to-linux-permissions</a></li>
+              <li> <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal" target="_blank"> an-introduction-to-the-linux-terminal</a> </li>  </ul> 
             </section>
     </footer>
 </body>
